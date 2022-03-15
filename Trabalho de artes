@@ -1,0 +1,124 @@
+from PySimpleGUI import PySimpleGUI as sg
+import turtle
+
+#Layout
+#janela
+#ler eventos
+
+sg.theme('Reddit')
+layout = [
+    [sg.Text('Trabalho de Artes : Arte e Tecnologia')],
+    [sg.Text('O trabalho consiste em um programa que desenha formas geométricas perfeitas')],
+    [sg.Text('5 Figuras podem ser desenhadas pelo computador no momento.')],
+    [sg.Text('Escolha uma: ')],
+    [sg.Button('1'), sg.Button('2'), sg.Button('3'), sg.Button('4'), sg.Button('5')],
+    [sg.Text('Rafael, Lucas, Evandro, Leonardo, Gustavo, Gleydson ')]
+]
+
+
+#janela
+
+janela = sg.Window('Trabalho de artes', layout)
+
+#Ler os eventos
+
+while True:
+    eventos, valores = janela.read()
+    if eventos == sg.WINDOW_CLOSED:
+        break
+    if eventos == '1':
+        s = turtle.Screen()
+        s.bgcolor("black")
+        s.title("Opção 1 : Estrela")
+
+        t = turtle.Turtle()
+        t.speed(0)
+
+        for i in range(200):
+            for colours in ["yellow", "orange", "red"]:
+                t.color(colours)
+                t.forward(i + 2)
+                t.right(175)
+                t.forward(i + 4)
+                t.right(30)
+
+        turtle.done
+
+
+    if eventos == '2':
+        t = turtle.Turtle()
+        s = turtle.Screen()
+
+        s.title("Opção 2 : Holograma")
+
+        t.speed(0)
+        s.bgcolor("black")
+        t.pencolor("cyan")
+
+        for i in range(240):
+            t.color("cyan")
+            t.circle(i)
+            t.left(5)
+
+        turtle.done()
+
+
+    if eventos == '3':
+        t = turtle.Turtle()
+        s = turtle.Screen()
+        s.title("Opção 3 : Spirograph")
+
+        s.bgcolor("black")
+        t.pensize(2)
+        t.speed(0)
+
+        for i in range(6):
+            for colours in ["red", "blue", "cyan", "yellow", "green", "white", "magenta"]:
+                t.color(colours)
+                t.circle(100)
+                t.left(10)
+
+        t.hideturtle()
+        turtle.done()
+
+
+    if eventos == '4':
+        t = turtle.Turtle()
+        s = turtle.Screen()
+        s.title("Opção 4 : Vortex")
+
+        s.bgcolor("black")
+        t.pensize(2)
+        t.speed(0)
+
+        for i in range(300):
+            for colours in ["white", "pink", "cyan"]:
+                t.color(colours)
+                t.forward(i * 4)
+                t.right(121)
+
+        t.hideturtle()
+        turtle.done
+
+
+
+    if eventos == '5':
+        t = turtle.Turtle()
+        s = turtle.Screen()
+        s.title("Opção 5 : RGB")
+
+        s.bgcolor("black")
+        t.pensize(2)
+        t.speed(0)
+
+        for i in range(100):
+            for col in ["blue", "yellow", "red"]:
+                t.color(col)
+                t.circle(70)
+                t.forward(2)
+                t.right(2)
+
+        t.hideturtle()
+        turtle.done
+
+    # fim
